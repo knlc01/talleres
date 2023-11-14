@@ -6,7 +6,7 @@
 	define('DB_PASS', '');//Contraseña del usuario de la base de datos
 	define('DB_NAME', 'taller_mecanico');//Nombre de la base de datos
   */
-    $DB_HOST='127.0.0.1:33065';
+    $DB_HOST='127.0.0.1:3306';
     $DB_USER='root';
     $DB_PASS='';
     $DB_NAME='taller_mecanico';

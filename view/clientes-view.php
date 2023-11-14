@@ -202,7 +202,7 @@
         var parametros = {"action":"ajax","id":id};
         $.ajax({
                 //url:'view/modals/editar/taller.php',//aca se edita
-                url:'view/modals/editar/cliente.php',//aca se edita
+                url:'view/modals/editar/cliente.php',//aca se edita - La ventana emergente
                 data: parametros,
                  beforeSend: function(objeto){
                 $("#loader2").html("<img src='./assets/img/ajax-loader.gif'>");

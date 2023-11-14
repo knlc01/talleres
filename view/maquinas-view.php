@@ -16,7 +16,7 @@
                         </ul>
                         <!--breadcrumbs end -->
                         <br>
-                    <h1 class="h1">Maquinas</h1>
+                    <h1 class="h1">Maquinas (view\maquinas-view.php)</h1>
                 </div>
             </div>
             
@@ -37,7 +37,8 @@
                 <div class="col-md-offset-10">
                     <!-- modals -->
                         <?php 
-                            include "modals/agregar/agregar_taller.php";
+//                            include "modals/agregar/agregar_taller.php";//aca estan los botones
+                            include "modals/agregar/agregar_maquina.php";//aca estan los botones
                             include "modals/editar/editar_taller.php";
                         ?>
                     <!-- /end modals -->
@@ -96,7 +97,7 @@
         var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
         $("#loader").fadeIn('slow');
         $.ajax({
-            url:'view/ajax/taller_ajax.php',
+            url:'view/ajax/taller_ajax.php',//aca estan las funciones muestra la tabla elimina etc
             data: parametros,
              beforeSend: function(objeto){
             $("#loader").html("<img src='./assets/img/ajax-loader.gif'>");
@@ -146,7 +147,7 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                url: "view/ajax/agregar/agregar_taller.php",//aca va para conectar con la bd
+                url: "view/ajax/agregar/agregar_maquina .php",//aca va para conectar con la bd
                 data: parametros,
                  beforeSend: function(objeto){
                     $("#resultados_ajax").html("Enviando...");
