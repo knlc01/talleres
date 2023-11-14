@@ -32,9 +32,9 @@
 $action = (isset($_REQUEST['action'])&& $_REQUEST['action'] !=NULL)?$_REQUEST['action']:'';
 if($action == 'ajax'){
 	$query = mysqli_real_escape_string($con,(strip_tags($_REQUEST['query'], ENT_QUOTES)));
-	$tables="taller";
+	$tables="maquinas";
 	$campos="*";
-	$sWhere=" nombre LIKE '%".$query."%'";
+	$sWhere=" maquina LIKE '%".$query."%'";
 	include 'pagination.php'; //include pagination file
 	//pagination variables
 	$page = (isset($_REQUEST['page']) && !empty($_REQUEST['page']))?$_REQUEST['page']:1;
@@ -65,15 +65,14 @@ if($action == 'ajax'){
     <table class="table table-bordered table-striped">
         <thead>
             <tr><!-- las columnas de la tabla -->
-                <th>#ID</th>
-                <th>Nombre</th>
-                <th>Cuit</th>
-                <th>Dirección</th>
-                <th>Localidad</th>
-                <th>Telefóno</th>
-                <th>Celular</th>
-                <th>Estado</th>
-                <th>Fecha</th>
+                <th>#Id</th>
+                <th>Maquina</th>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Cliente</th>
+                <th>Id cliente</th>
+                <th>estado</th>
+                <th>fecha Ingreso</th>
                 <th></th>
             </tr>
         </thead>
@@ -81,14 +80,13 @@ if($action == 'ajax'){
 			$finales=0;
 			while($row = mysqli_fetch_array($query)){	
 				$id=$row['id'];
-				$nombre=$row['nombre'];
-				$cuit=$row['cuit'];
-				$direccion=$row['direccion'];
-				$localidad=$row['localidad'];
-				$telefono=$row['telefono'];
-				$celular=$row['celular'];
+				$nombre=$row['maquina'];
+				$cuit=$row['marca'];
+				$direccion=$row['modelo'];
+				$localidad=$row['cliente'];
+				$telefono=$row['id_cliente'];
 				$estado=$row['estado'];
-				$created_at=$row['fecha_carga'];
+				$created_at=$row['fecha_ingreso'];
 				
 
 				list($date,$hora)=explode(" ",$created_at);
@@ -97,10 +95,10 @@ if($action == 'ajax'){
 
 
 				if ($estado==1){
-					$lbl_status="Activo";
+					$lbl_status="en taller";
 					$lbl_class='label label-success';
 				}else {
-					$lbl_status="Inactivo";
+					$lbl_status="fuera";
 					$lbl_class='label label-danger';
 				}
 				/*$kind=$row['kind'];*/
@@ -115,7 +113,7 @@ if($action == 'ajax'){
                 <td><?php echo $direccion ?></td>
                 <td><?php echo $localidad ?></td>
                 <td><?php echo $telefono ?></td>
-                <td><?php echo $celular ?></td>
+                <!-- <td><?php echo $celular ?></td> -->
                 <td><span class="<?php echo $lbl_class;?>"><?php echo $lbl_status;?></span></td>
                 <td><?php echo $fecha ?></td>
                 <td class="text-right">
