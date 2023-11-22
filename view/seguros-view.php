@@ -38,7 +38,7 @@
                     <!-- modals -->
                         <?php 
                             include "modals/agregar/agregar_seguro.php";
-                            include "modals/editar/editar_seguro.php";
+                            include "modals/editar/editar_orden.php";
                         ?>
                     <!-- /end modals -->
                     

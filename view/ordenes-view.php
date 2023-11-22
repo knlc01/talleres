@@ -2,7 +2,7 @@
     $active5="active";
     include "resources/header.php";
     
-    if ($_SESSION['seguro']==1){
+    if ($_SESSION['ordenes']==1){
 ?>
     <!--main content start-->
     <section class="main-content-wrapper">
@@ -12,11 +12,11 @@
                         <!--breadcrumbs start -->
                         <ul class="breadcrumb  pull-right">
                             <li><a href="./?view=dashboard">Dashboard</a></li>
-                            <li class="active">Seguros</li>
+                            <li class="active">Ordenes</li>
                         </ul>
                         <!--breadcrumbs end -->
                         <br>
-                    <h1 class="h1">Ordenes</h1>
+                    <h1 class="h1">Ordenes view\ordenes-view.php</h1>
                 </div>
             </div>
             
@@ -37,9 +37,8 @@
                 <div class="col-md-offset-10">
                     <!-- modals -->
                         <?php 
-                            //include "modals/agregar/agregar_seguro.php";//Acá esta el boton <Nuevo>
                             include "modals/agregar/agregar_orden.php";//Acá esta el boton <Nuevo>
-                            include "modals/editar/editar_seguro.php";
+                            include "modals/editar/editar_orden.php";
                         ?>
                     <!-- /end modals -->
                     
@@ -66,7 +65,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Datos de los Seguros</h3>
+                            <h3 class="panel-title">Datos de las ordenes ("en la ultima columna agregar btn ver orden, La tabla seria una vista previa de la orden")</h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
@@ -98,7 +97,8 @@
         var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
         $("#loader").fadeIn('slow');
         $.ajax({
-            url:'view/ajax/seguros_ajax.php',
+            // url:'view/ajax/seguros_ajax.php',//Aca se ve la tabla borra este archivo
+            url:'view/ajax/ordenes_ajax.php',//Aca se ve la tabla
             data: parametros,
              beforeSend: function(objeto){
             $("#loader").html("<img src='./assets/img/ajax-loader.gif'>");
@@ -148,7 +148,7 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                url: "view/ajax/agregar/agregar_seguro.php",
+                url: "view/ajax/agregar/agregar_orden.php",
                 data: parametros,
                  beforeSend: function(objeto){
                     $("#resultados_ajax").html("Enviando...");
@@ -173,7 +173,59 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                url: "view/ajax/editar/editar_seguro.php",
+                //url: "view/ajax/agregar/agregar_maquina.php",//aca va para conectar con la bd
+                url: "view/ajax/editar/editar_orden.php",//aca va para conectar con la bd
+                data: parametros,
+                 beforeSend: function(objeto){
+                    $("#resultados_ajax").html("Enviando...");
+                  },
+                success: function(datos){
+                $("#resultados_ajax").html(datos);
+                $('#actualizar_datos').attr("disabled", false);
+                load(1);
+                window.setTimeout(function() {
+                $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove();});}, 5000);
+                $('#nm').modal('hide');
+              }
+        });
+      event.preventDefault();
+    });
+
+// Función para buscar máquinas
+function buscarMaquinas() {
+        $('#actualizar_datos').attr("disabled", true);
+        var parametros = $('#update_register').serialize();
+        $.ajax({
+            type: "POST",
+            url: "view/ajax/agregar/agregar_maquina.php",  // Reemplaza con la ruta correcta
+            //url: "view/ajax/editar/editar_orden.php",
+            data: parametros,
+            beforeSend: function (objeto) {
+                $("#resultados_ajax").html("Enviando...");
+            },
+            success: function (datos) {
+                $("#resultados_ajax").html(datos);
+                $('#actualizar_datos').attr("disabled", false);
+                load(1);
+                window.setTimeout(function () {
+                    $(".alert").fadeTo(500, 0).slideUp(500, function () {
+                        $(this).remove();
+                    });
+                }, 5000);
+                $('#nm').modal('hide');
+            }
+        });
+        // Evitar el envío del formulario
+        event.preventDefault();
+    }
+/*
+    $( "#update_register" ).submit(function( event ) {
+      $('#actualizar_datos').attr("disabled", true);
+     var parametros = $(this).serialize();
+         $.ajax({
+                type: "POST",
+                url: "view/ajax/editar/editar_orden.php",
                 data: parametros,
                  beforeSend: function(objeto){
                     $("#resultados_ajax").html("Enviando...");
@@ -189,13 +241,16 @@
               }
         });
       event.preventDefault();
-    });
+    });*/
 </script>
 <script>
     function editar(id){
+//        console.log(id);si me muestra el id 
         var parametros = {"action":"ajax","id":id};
         $.ajax({
-                url:'view/modals/editar/seguro.php',
+                //url:'view/modals/editar/seguro.php',
+                //url:'modals/agregar/agregar_maquina.php',
+                url: "view/ajax/editar/orden.php",
                 data: parametros,
                  beforeSend: function(objeto){
                 $("#loader2").html("<img src='./assets/img/ajax-loader.gif'>");
@@ -205,6 +260,9 @@
                     $("#loader2").html("");
                 }
             })
+    }
+    function nuevaMaquina(id){
+        <?php echo "oka"; ?>
     }
 </script>
 <?php     
