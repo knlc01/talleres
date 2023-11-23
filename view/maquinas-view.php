@@ -147,7 +147,7 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                url: "view/ajax/agregar/agregar_maquina .php",//aca va para conectar con la bd
+                url: "view/ajax/agregar/agregar_maquina.php",//aca va para conectar con la bd
                 data: parametros,
                  beforeSend: function(objeto){
                     $("#resultados_ajax").html("Enviando...");
