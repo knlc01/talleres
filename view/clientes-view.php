@@ -16,7 +16,7 @@
                         </ul>
                         <!--breadcrumbs end -->
                         <br>
-                    <h1 class="h1">Clientes</h1>
+                    <h1 class="h1">Clientes view\clientes-view.php</h1>
                 </div>
             </div>
             
