@@ -6,11 +6,11 @@
 	$id=$_REQUEST["id"];
 	$id=intval($id);
 
-	$query_validate=mysqli_query($con,"select * from vehiculo where idseguro='".$id."'");
+	$query_validate=mysqli_query($con,"select * from ordenes where id='".$id."'");
 	$count=mysqli_num_rows($query_validate);
 	if ($count==0){
 
-		if($delete=mysqli_query($con, "DELETE FROM seguro WHERE id='$id'")){
+		if($delete=mysqli_query($con, "DELETE FROM ordenes WHERE id='$id'")){
 			$aviso="Bien hecho!";
 			$msj="Datos eliminados satisfactoriamente.";
 			$classM="alert alert-success";
@@ -46,7 +46,8 @@ if($action == 'ajax'){
 	if ($row= mysqli_fetch_array($count_query)){$numrows = $row['numrows'];}
 	else {echo mysqli_error($con);}
 	$total_pages = ceil($numrows/$per_page);
-	$reload = './seguros-view.php';
+	//$reload = './seguros-view.php';
+	$reload = './ordenes-view.php';
 	//main query to fetch the data
 	$query = mysqli_query($con,"SELECT $campos FROM  $tables where $sWhere LIMIT $offset,$per_page");
 	//loop through fetched data
