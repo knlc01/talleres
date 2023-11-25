@@ -6,14 +6,23 @@
 	}elseif (!empty($_POST['id'])){
 	require_once ("../../../config/config.php");
        // escaping, additionally removing everything that could be (html/javascript-) code
-        $maquina = mysqli_real_escape_string($con,(strip_tags($_POST["id"],ENT_QUOTES)));
+        //$maquina = mysqli_real_escape_string($con,(strip_tags($_POST["id"],ENT_QUOTES)));
         $id=intval($_POST['id']);
+        $maquina = mysqli_real_escape_string($con,(strip_tags($_POST["maquina"],ENT_QUOTES)));
+        $id_maquina = mysqli_real_escape_string($con,(strip_tags($_POST["id_maquina"],ENT_QUOTES)));
+        $cliente = mysqli_real_escape_string($con,(strip_tags($_POST["cliente"],ENT_QUOTES)));
+        $id_cliente = mysqli_real_escape_string($con,(strip_tags($_POST["id_cliente"],ENT_QUOTES)));
+		$fecha_ingreso=date("Y-m-d H:i:s");
+		$nota = mysqli_real_escape_string($con,(strip_tags($_POST["nota"],ENT_QUOTES)));
+        $estado = mysqli_real_escape_string($con,(strip_tags($_POST["estado"],ENT_QUOTES)));
+		$fecha_ingreso=date("Y-m-d H:i:s");
+		
 	// UPDATE data into database
-    $sql = "UPDATE ordenes SET maquina='".$maquina."' WHERE id='".$id."' ";
+	$sql = "UPDATE ordenes SET maquina='".$maquina."', id_maquina = '".$id_maquina."', cliente = '".$cliente."', id_cliente = '".$id_cliente."', fecha_ingreso = '".$fecha_ingreso."', nota = '".$nota."', estado = '".$estado."' WHERE id='".$id."' ";
     $query = mysqli_query($con,$sql);
 
     if ($query) {
-        $messages[] = "El Seguro ha sido actualizado con éxito.";
+        $messages[] = "La Orden ha sido actualizado con éxito.";
     } else {
         $errors[] = "Lo sentimos, el registro falló. Por favor, regrese y vuelva a intentarlo.";
     }
