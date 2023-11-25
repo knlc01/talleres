@@ -49,7 +49,7 @@ if($action == 'ajax'){
 	//$reload = './seguros-view.php';
 	$reload = './ordenes-view.php';
 	//main query to fetch the data
-	$query = mysqli_query($con,"SELECT $campos FROM  $tables where $sWhere LIMIT $offset,$per_page");
+	$query = mysqli_query($con,"SELECT $campos FROM $tables where $sWhere LIMIT $offset,$per_page");
 	//loop through fetched data
 	
 	if (isset($_REQUEST["id"])){

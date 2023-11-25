@@ -250,7 +250,8 @@ function buscarMaquinas() {
         $.ajax({
                 //url:'view/modals/editar/seguro.php',
                 //url:'modals/agregar/agregar_maquina.php',
-                url: "view/ajax/editar/orden.php",
+                url: 'view/modals/editar/orden.php',
+//                url: "view/ajax/editar/orden.php",
                 data: parametros,
                  beforeSend: function(objeto){
                 $("#loader2").html("<img src='./assets/img/ajax-loader.gif'>");
