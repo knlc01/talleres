@@ -39,7 +39,8 @@
                         <?php 
 //                            include "modals/agregar/agregar_taller.php";//aca estan los botones
                             include "modals/agregar/agregar_maquina.php";//aca estan los botones
-                            include "modals/editar/editar_taller.php";
+                            //include "modals/editar/editar_taller.php";
+                            include "modals/editar/editar_maquina.php";
                         ?>
                     <!-- /end modals -->
                     
@@ -172,7 +173,8 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                url: "view/ajax/editar/editar_taller.php",
+                //url: "view/ajax/editar/editar_taller.php",
+                url: "view/ajax/editar/editar_maquina.php",//aca es la edicion a la bd
                 data: parametros,
                  beforeSend: function(objeto){
                     $("#resultados_ajax").html("Enviando...");
@@ -194,7 +196,8 @@
     function editar(id){
         var parametros = {"action":"ajax","id":id};
         $.ajax({
-                url:'view/modals/editar/taller.php',
+                //url:'view/modals/editar/taller.php',
+                url:'view/modals/editar/maquinas.php',
                 data: parametros,
                  beforeSend: function(objeto){
                 $("#loader2").html("<img src='./assets/img/ajax-loader.gif'>");
