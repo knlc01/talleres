@@ -1,3 +1,4 @@
+<!-- código HTML es la página de error 403 (Acceso prohibido) -->
 <!--main content start-->
 <section class="main-content-wrapper">
 		    <section id="main-content">

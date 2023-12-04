@@ -1,6 +1,6 @@
 <?php
 	include("is_logged.php");//Archivo comprueba si el usuario esta logueado
-	/* Connect To Database*/
+	// se conecta a la Base de datos 
 	require_once ("../../config/config.php");
 	if (isset($_REQUEST["id"])){//codigo para eliminar ( Boton eliminar dentro de la tabla)
 		$id=$_REQUEST["id"];

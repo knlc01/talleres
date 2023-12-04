@@ -1,11 +1,16 @@
 <?php
+//Este código PHP y HTML forma parte de una página de inicio de sesión.
+    // Verifica si existe una sesión iniciada 
     if (isset($_SESSION['user_id']) && $_SESSION!==null) {
-       header("location: ./?view=dashboard");
+    //if (isset($_SESSION['user_id']) && $_SESSION) {
+        //Esta línea esta redirigiendo a los usuarios que ya han iniciado sesión a la página de inicio (dashboard). Si la sesión ya está establecida, la redirección se realiza antes de renderizar el HTML.
+        header("location: ./?view=dashboard");
     }
 ?>
 <!DOCTYPE html>
 <html class="no-js">
     <head>
+        <!-- Se incluyen varios archivos CSS y JS para estilos y funcionalidades. -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Iniciar Sesión</title>
@@ -28,6 +33,7 @@
         <script src="assets/js/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
+    <!-- Se muestra un formulario de inicio de sesión con campos para correo electrónico (email) y contraseña (password). -->
         <section id="login-container" style="width: 95%"><!-- utilizo un ancho para no desajustarlo  -->
             <div class="row">
                 <div class="col-md-3" id="login-wrapper">
@@ -47,6 +53,7 @@
                             }
                         ?>
                            <p> Ingresa Tus Datos.</p>
+                           <!-- El formulario tiene una acción (action="view/resources/login.php") que indica que los datos se enviarán al archivo login.php en el directorio view/resources/ cuando se envíe el formulario. -->
                             <form class="form-horizontal" role="form" method="post" action="view/resources/login.php">
                                 <div class="form-group">
                                     <div class="col-md-12">
@@ -72,6 +79,7 @@
             </div>
         </section>
         <!--Global JS-->
+        <!-- se incluyen varios archivos JS que se utilizan para diversas funciones, como animaciones y seguimiento de Google Analytics. -->
         <script src="assets/js/jquery-1.10.2.min.js"></script>
         <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
         <script src="assets/plugins/waypoints/waypoints.min.js"></script>
