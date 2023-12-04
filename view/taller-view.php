@@ -1,7 +1,9 @@
 <?php 
+    //Se establece la variable $active4  (para resaltar algún elemento en la interfaz)
     $active4="active";
+    //se incluye el archivo "header.php", que contiene la estructura del encabezado de la página.
     include "resources/header.php";
-    
+    //Se verifica si la variable de $_SESSION['taller'] es igual a 1. Esto sugiere que se está verificando si el usuario tiene permisos para acceder a la sección de talleres. Si tiene permisos, se muestra el contenido de la sección de talleres.
     if ($_SESSION['taller']==1){
 ?>
     <!--main content start-->
@@ -86,6 +88,10 @@
     include "resources/footer.php";
 ?>
 <script>
+    /*
+    Scripts JavaScript:
+        load(page): Función que utiliza AJAX para cargar los resultados de la búsqueda dinámicamente sin recargar la página completa.
+    */
     $(function() {
         load(1);
     });
@@ -107,7 +113,7 @@
             }
         })
     }
-    
+// per_page(valor): Función para cambiar la cantidad de resultados mostrados por página y recargar la página con la nueva configuración.
     function per_page(valor){
         $("#per_page").val(valor);
         load(1);
@@ -116,6 +122,7 @@
     }
 </script>
 <script>
+// eliminar(id): Función para eliminar un taller mediante AJAX. Muestra una confirmación antes de realizar la eliminación.
     function eliminar(id){
         if(confirm('Esta acción  eliminará de forma permanente al taller \n\n Desea continuar?')){
             var page=1;
@@ -141,6 +148,7 @@
     }
 </script>
 <script>
+// $( "#new_register" ).submit(function( event ) { ... }): Maneja el envío del formulario para agregar un nuevo taller mediante AJAX.
     $( "#new_register" ).submit(function( event ) {
       $('#guardar_datos').attr("disabled", true);
      var parametros = $(this).serialize();
@@ -166,6 +174,7 @@
 </script>
 
 <script>
+// $( "#update_register" ).submit(function( event ) { ... }): Maneja el envío del formulario para editar un taller existente mediante AJAX.
     $( "#update_register" ).submit(function( event ) {
       $('#actualizar_datos').attr("disabled", true);
      var parametros = $(this).serialize();
@@ -190,6 +199,7 @@
     });
 </script>
 <script>
+// editar(id): Función para cargar un formulario de edición de taller mediante AJAX.
     function editar(id){
         var parametros = {"action":"ajax","id":id};
         $.ajax({

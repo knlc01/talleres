@@ -100,7 +100,7 @@
 
         $.ajax({
             type: "GET",
-            url: "view/ajax/taller_ajax.php",
+            url: "view/ajax/maquina_ajax.php",
             data: {
                 action: "ajax_resultadosMaquinasOrden",//de aca se le dice que me muestre solo la tabla de maquinas con 6 columas
                 query: query,

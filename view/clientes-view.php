@@ -2,7 +2,7 @@
     $active4="active";
     include "resources/header.php";
     
-    if ($_SESSION['taller']==1){
+    if ($_SESSION['clientes']==1){
 ?>
     <!--main content start-->
     <section class="main-content-wrapper">
@@ -67,7 +67,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title">Datos de los Talleres</h3>
+                            <h3 class="panel-title">Datos de los clientes</h3>
                             <div class="actions pull-right">
                                 <i class="fa fa-chevron-down"></i>
                                 <i class="fa fa-times"></i>
@@ -127,7 +127,8 @@
             var parametros = {"action":"ajax","page":page,"query":query,"per_page":per_page,"id":id};
             
             $.ajax({
-                url:'view/ajax/taller_ajax.php',
+               // url:'view/ajax/taller_ajax.php',//modificar
+                url:'view/ajax/maquina_ajax.php',
                 data: parametros,
                  beforeSend: function(objeto){
                 $("#loader").html("<img src='./assets/img/ajax-loader.gif'>");
