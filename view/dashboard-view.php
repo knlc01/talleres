@@ -5,6 +5,12 @@
     if ($_SESSION['dashboard']==1){
 
         $maquinas = mysqli_query($con, "select * from maquinas");
+        $clientes = mysqli_query($con, "select * from cliente");
+        $ordenes = mysqli_query($con, "select * from ordenes");
+        $repuestos = mysqli_query($con, "select * from repuestos");
+        $presupuesto = mysqli_query($con, "select * from presupuesto");
+
+
         $empleados = mysqli_query($con, "select * from empleado");
         $talleres = mysqli_query($con, "select * from taller");
         $empresas = mysqli_query($con, "select * from empresa");
@@ -51,7 +57,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="dashboard-tile detail tile-turquoise">
                             <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($talleres) ?>" data-speed="2500"> </h1>
+                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($clientes) ?>" data-speed="2500"> </h1>
                                 <p>Clientes</p>
                             </div>
                             <div class="icon"><i class="fa fa-indent"></i>
@@ -62,7 +68,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="dashboard-tile detail tile-blue">
                             <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($talleres) ?>" data-speed="2500"> </h1>
+                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($ordenes) ?>" data-speed="2500"> </h1>
                                 <p>Ordenes</p>
                             </div>
                             <div class="icon"><i class="fa fa-indent"></i>
@@ -73,7 +79,7 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="dashboard-tile detail tile-purple">
                             <div class="content">
-                                <h1 class="text-left timer" data-to="<?php echo mysqli_num_rows($vehiculos) ?>" data-speed="2500"> </h1>
+                                <h1 class="text-left timer" data-to="<?php echo mysqli_num_rows($repuestos) ?>" data-speed="2500"> </h1>
                                 <p>Repuestos</p>
                             </div>
                             <div class="icon"><i class="fa fa-truck"></i>
@@ -84,8 +90,8 @@
                     <div class="col-md-3 col-sm-6">
                         <div class="dashboard-tile detail tile-red">
                             <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($empleados) ?>" data-speed="2500"> </h1>
-                                <p>Pedidos</p>
+                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($presupuesto) ?>" data-speed="2500"> </h1>
+                                <p>Presupuesto</p>
                             </div>
                             <div class="icon"><i class="fa fa-users"></i>
                             </div>
