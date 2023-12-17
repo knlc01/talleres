@@ -31,6 +31,7 @@
         <!--main content start-->
         <section class="main-content-wrapper">
             <section id="main-content">
+                <h3>EL-ROI</h3>
                 <h4>/view/dashboard-view.php (seccion con estos cuadros)</h4>
                 <h4>cada seccion modificar view\logout-view.php - view\resources\login.php - view\dashboard-view.php - view\resources\header.php</h4>
                 <!--tiles start-->
@@ -39,7 +40,7 @@
                    <div class="col-md-3 col-sm-6">
                         <div class="dashboard-tile detail tile-red">
                             <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($empleados) ?>" data-speed="2500"> </h1>
+                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($maquinas) ?>" data-speed="2500"> </h1>
                                 <p>Maquinas</p>
                             </div>
                             <div class="icon"><i class="fa fa-users"></i>
