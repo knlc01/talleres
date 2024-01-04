@@ -38,8 +38,8 @@
         <section class="main-content-wrapper">
             <section id="main-content">
                 <h3>EL-ROI</h3>
-                <!-- <h4>/view/dashboard-view.php (seccion con estos cuadros)</h4>
-                <h4>cada seccion modificar view\logout-view.php - view\resources\login.php - view\dashboard-view.php - view\resources\header.php</h4> -->
+                <h4>/view/dashboard-view.php (seccion con estos cuadros)</h4>
+                <h4>cada seccion modificar view\logout-view.php - view\resources\login.php - view\dashboard-view.php - view\resources\header.php</h4>
                 <!--tiles start-->
                 <div class="row">
                    <!-- MI EDIT -->
