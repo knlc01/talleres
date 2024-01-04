@@ -58,8 +58,6 @@
                 </div>
             </div>
 
-            
-
             <div id="resultados_ajax"></div>
             <div class="row">
                 <div class="col-md-12">

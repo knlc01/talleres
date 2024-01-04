@@ -38,8 +38,8 @@
         <section class="main-content-wrapper">
             <section id="main-content">
                 <h3>EL-ROI</h3>
-                <h4>/view/dashboard-view.php (seccion con estos cuadros)</h4>
-                <h4>cada seccion modificar view\logout-view.php - view\resources\login.php - view\dashboard-view.php - view\resources\header.php</h4>
+                <!-- <h4>/view/dashboard-view.php (seccion con estos cuadros)</h4>
+                <h4>cada seccion modificar view\logout-view.php - view\resources\login.php - view\dashboard-view.php - view\resources\header.php</h4> -->
                 <!--tiles start-->
                 <div class="row">
                    <!-- MI EDIT -->
@@ -97,49 +97,6 @@
                             </div>
                         </div>
                     </div>
-                   <!-- MI EDIT -->
-<!-- CODIGO ORIGINAL
-                    <div class="col-md-3 col-sm-6">
-                        <div class="dashboard-tile detail tile-red">
-                            <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="< ?php echo mysqli_num_rows($empleados) ?>" data-speed="2500"> </h1>
-                                <p>Empleados</p>
-                            </div>
-                            <div class="icon"><i class="fa fa-users"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="dashboard-tile detail tile-turquoise">
-                            <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($talleres) ?>" data-speed="2500"> </h1>
-                                <p>Talleres</p>
-                            </div>
-                            <div class="icon"><i class="fa fa-indent"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="dashboard-tile detail tile-blue">
-                            <div class="content">
-                                <h1 class="text-left timer" data-from="0" data-to="<?php echo mysqli_num_rows($empresas) ?>" data-speed="2500"> </h1>
-                                <p>Empresas</p>
-                            </div>
-                            <div class="icon"><i class="fa fa-building-o"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="dashboard-tile detail tile-purple">
-                            <div class="content">
-                                <h1 class="text-left timer" data-to="<?php echo mysqli_num_rows($vehiculos) ?>" data-speed="2500"> </h1>
-                                <p>Vehiculos</p>
-                            </div>
-                            <div class="icon"><i class="fa fa-truck"></i>
-                            </div>
-                        </div>
-                    </div>
- -->
                 </div>
                 <!--tiles end-->
                 <!--dashboard charts and map start-->
@@ -182,11 +139,6 @@ var barChartData = {
             fillColor : "rgba(220,220,220,0.5)",
             strokeColor : "rgba(220,220,220,1)",
             data : [<?php echo suma_reparaciones(1);?>, <?php echo suma_reparaciones(2);?>, <?php echo suma_reparaciones(3);?>, <?php echo suma_reparaciones(4);?>, <?php echo suma_reparaciones(5);?>, <?php echo suma_reparaciones(6);?>, <?php echo suma_reparaciones(7);?>,<?php echo suma_reparaciones(8);?>,<?php echo suma_reparaciones(9);?>,<?php echo suma_reparaciones(10);?>,<?php echo suma_reparaciones(11);?>,<?php echo suma_reparaciones(12);?>]
-        },
-        {
-            fillColor : "rgba(151,187,205,0.5)",
-            strokeColor : "rgba(151,187,205,1)",
-            data : [<?php echo suma_choques(1);?>, <?php echo suma_choques(2);?>, <?php echo suma_choques(3);?>, <?php echo suma_choques(4);?>, <?php echo suma_choques(5);?>, <?php echo suma_choques(6);?>, <?php echo suma_choques(7);?>,<?php echo suma_choques(8);?>,<?php echo suma_choques(9);?>,<?php echo suma_choques(10);?>,<?php echo suma_choques(11);?>,<?php echo suma_choques(12);?>]
         }
     ]
     

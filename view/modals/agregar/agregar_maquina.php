@@ -8,7 +8,7 @@
         <form class="form-horizontal" role="form" method="post" id="new_register" name="new_register">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel"> Nuevo Maquina (view\modals\agregar\agregar_maquina.php)</h4>
+                <h4 class="modal-title" id="myModalLabel"> Nueva Maquina (view\modals\agregar\agregar_maquina.php)</h4>
             </div>
             <div class="modal-body">
                 <div class="form-group">
