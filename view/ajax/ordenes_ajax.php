@@ -92,10 +92,39 @@ if($action == 'ajax'){
 
 				$estado=$row['estado'];
 				if ($estado==1){
-					$lbl_status="en taller";
+					$lbl_status="Ingreso";
 					$lbl_class='label label-success';
-				}else {
-					$lbl_status="fuera";
+				}
+				elseif($estado==2){
+					$lbl_status="Chequeo";
+					$lbl_class='label label-success';
+				}
+				elseif($estado==3){
+					$lbl_status="Presupuesto";
+					$lbl_class='label label-success';
+				}
+				elseif($estado==4){
+					$lbl_status="Repuestos";
+					$lbl_class='label label-success';
+				}
+				elseif($estado==5){
+					$lbl_status="Aceptado";
+					$lbl_class='label label-success';
+				}
+				elseif($estado==6){
+					$lbl_status="Rechazado";
+					$lbl_class='label label-success';
+				}
+				elseif($estado==7){
+					$lbl_status="En reparacion";
+					$lbl_class='label label-success';
+				}
+				elseif($estado==8){
+					$lbl_status="Terminados";
+					$lbl_class='label label-success';
+				}
+				else {
+					$lbl_status="Orden perdida";
 					$lbl_class='label label-danger';
 				}
 

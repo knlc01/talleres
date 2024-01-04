@@ -75,8 +75,14 @@
                     <label for="estado" class="col-sm-2 control-label">Estado: </label>
                     <div class="col-sm-10">
                         <select class="form-control" name="estado" id="estado">
-                            <option value="1">En taller</option>
-                            <option value="2">fuera</option>
+                        <option value="1">Ingreso</option><!-- Valor 1 -->
+                            <option value="2">Chequeo</option><!-- Valor 2 -->
+                            <option value="3">Presupuesto</option><!-- Valor 3 -->
+                            <option value="4">Repuestos</option><!-- Valor 4 -->
+                            <option value="5">Aceptado</option><!-- Valor 5 -->
+                            <option value="6">Rechazado</option><!-- Valor 6 -->
+                            <option value="7">En reparacion</option><!-- Valor 7 -->
+                            <option value="8">Terminados</option><!-- Valor 8 -->
                         </select>
                     </div>
                 </div>
