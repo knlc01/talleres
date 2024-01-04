@@ -16,10 +16,11 @@
                         </ul>
                         <!--breadcrumbs end -->
                         <br>
-                    <h1 class="h1">Maquinas (view\maquinas-view.php)</h1>
+                        <h1 class="h1">Maquinas</h1>
+                    <!-- <h1 class="h1">Maquinas (view\maquinas-view.php)</h1> -->
                 </div>
             </div>
-            
+
             <div class="row">
                 <div class="col-xs-3">
                     <div class="input-group">
@@ -37,13 +38,10 @@
                 <div class="col-md-offset-10">
                     <!-- modals -->
                         <?php 
-//                            include "modals/agregar/agregar_taller.php";//aca estan los botones
                             include "modals/agregar/agregar_maquina.php";//aca estan los botones
-                            //include "modals/editar/editar_taller.php";
                             include "modals/editar/editar_maquina.php";
                         ?>
                     <!-- /end modals -->
-                    
                     <div class="btn-group">
                         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
                             Mostrar <span class="caret"></span>
@@ -59,9 +57,6 @@
                     <input type='hidden' id='per_page' value='15'>
                 </div>
             </div>
-
-            
-
             <div id="resultados_ajax"></div>
             <div class="row">
                 <div class="col-md-12">
@@ -119,7 +114,7 @@
 </script>
 <script>
     function eliminar(id){
-        if(confirm('Esta acción  eliminará de forma permanente al taller \n\n Desea continuar?')){
+        if(confirm('Esta acción  eliminará de forma permanente la maquina \n\n Desea continuar?')){
             var page=1;
             var query=$("#q").val();
             var per_page=$("#per_page").val();
@@ -173,7 +168,6 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                //url: "view/ajax/editar/editar_taller.php",
                 url: "view/ajax/editar/editar_maquina.php",//aca es la edicion a la bd
                 data: parametros,
                  beforeSend: function(objeto){
@@ -196,7 +190,6 @@
     function editar(id){
         var parametros = {"action":"ajax","id":id};
         $.ajax({
-                //url:'view/modals/editar/taller.php',
                 url:'view/modals/editar/maquinas.php',
                 data: parametros,
                  beforeSend: function(objeto){

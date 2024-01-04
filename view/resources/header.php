@@ -64,7 +64,7 @@ if (!isset($_SESSION['user_id'])&& $_SESSION['user_id']==null) {
     <section id="container">
         <header id="header">
             <!--logo start-->
-            <h4>/view/resources/header.php (Logo-empresa y seccion menú)</h4>
+            <!-- <h4>/view/resources/header.php (Logo-empresa y seccion menú)</h4> -->
             <div class="brand">
                 <a href="./?view=dashboard" ><span><?php echo $nombre_empresa; ?></span></a>
             </div>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['user_id'])&& $_SESSION['user_id']==null) {
         <aside class="sidebar">
             <div id="leftside-navigation" class="nano">
                     <li>
-                        <a href="http://sistemasenoferta.blogspot.com/"><i class="fa fa-cog"></i><span>Botones view\resources\header.php</span></a>
+                        <!-- <a href="http://sistemasenoferta.blogspot.com/"><i class="fa fa-cog"></i><span>Botones view\resources\header.php</span></a> -->
                     </li>
                 <ul class="nano-content">
                     <?php if ($_SESSION['dashboard']==1) { ?>

@@ -16,7 +16,8 @@
                         </ul>
                         <!--breadcrumbs end -->
                         <br>
-                    <h1 class="h1">Clientes view\clientes-view.php</h1>
+                    <!-- <h1 class="h1">Clientes view\clientes-view.php</h1> -->
+                    <h1 class="h1">Clientes</h1>
                 </div>
             </div>
             
@@ -37,9 +38,7 @@
                 <div class="col-md-offset-10">
                     <!-- modals -->
                         <?php 
-                            //include "modals/agregar/agregar_taller.php";//boton <Nuevo>
                             include "modals/agregar/agregar_cliente.php";//boton <Nuevo>
-                            //include "modals/editar/editar_taller.php";
                             include "modals/editar/editar_cliente.php";
                         ?>
                     <!-- /end modals -->
@@ -59,9 +58,6 @@
                     <input type='hidden' id='per_page' value='15'>
                 </div>
             </div>
-
-            
-
             <div id="resultados_ajax"></div>
             <div class="row">
                 <div class="col-md-12">
@@ -98,8 +94,7 @@
         var parametros = {"action":"ajax","page":page,'query':query,'per_page':per_page};
         $("#loader").fadeIn('slow');
         $.ajax({
-            //url:'view/ajax/taller_ajax.php',//aca esta el cuadro a mostrar con resultados
-            url:'view/ajax/cliente_ajax.php',
+            url:'view/ajax/cliente_ajax.php',//aca esta el cuadro a mostrar con resultados
             data: parametros,
              beforeSend: function(objeto){
             $("#loader").html("<img src='./assets/img/ajax-loader.gif'>");
@@ -127,7 +122,6 @@
             var parametros = {"action":"ajax","page":page,"query":query,"per_page":per_page,"id":id};
             
             $.ajax({
-               // url:'view/ajax/taller_ajax.php',//modificar
                 url:'view/ajax/maquina_ajax.php',
                 data: parametros,
                  beforeSend: function(objeto){
@@ -150,8 +144,8 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                //url: "view/ajax/agregar/agregar_taller.php",//aca va para conectar con la bd
-                url: "view/ajax/agregar/agregar_cliente.php",
+
+                url: "view/ajax/agregar/agregar_cliente.php",//aca va para conectar con la bd
                 data: parametros,
                  beforeSend: function(objeto){
                     $("#resultados_ajax").html("Enviando...");
@@ -202,7 +196,6 @@
     function editar(id){
         var parametros = {"action":"ajax","id":id};
         $.ajax({
-                //url:'view/modals/editar/taller.php',//aca se edita
                 url:'view/modals/editar/cliente.php',//aca se edita - La ventana emergente
                 data: parametros,
                  beforeSend: function(objeto){
