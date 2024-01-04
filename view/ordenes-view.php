@@ -34,6 +34,30 @@
                     <div id="loader" class="text-center"></div>
                 </div>
 
+                <!-- con esto se seleccionara en que estado se escuentra la orden -->
+                <div class="col-xs-3">
+                    <div class="input-group">
+                        <select class="form-control" id="cars">
+                            <option value="1">Ingreso</option><!-- Valor 1 -->
+                            <option value="2">Chequeo</option><!-- Valor 2 -->
+                            <option value="3">Presupuesto</option><!-- Valor 3 -->
+                            <option value="4">Repuestos</option><!-- Valor 4 -->
+                            <option value="5">Aceptado</option><!-- Valor 5 -->
+                            <option value="6">Rechazado</option><!-- Valor 6 -->
+                            <option value="7">En reparacion</option><!-- Valor 7 -->
+                            <option value="8">Terminados</option><!-- Valor 8 -->
+                        </select>
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button" onclick='load(1);'><i class='fa fa-search'></i></button>
+                        </span>
+                    </div><!-- /input-group -->
+                </div>
+                <div class="col-xs-3"></div>
+                <div class="col-xs-1">
+                    <div id="loader" class="text-center"></div>
+                </div>
+
+                
                 <div class="col-md-offset-10">
                     <!-- modals -->
                         <?php 
