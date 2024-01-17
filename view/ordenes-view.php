@@ -61,8 +61,9 @@
                 <div class="col-md-offset-10">
                     <!-- modals -->
                         <?php 
-                            include "modals/agregar/agregar_orden.php";//Acá esta el boton <Nuevo>
-                            include "modals/editar/editar_orden.php";
+                                include "modals/agregar/agregar_orden.php";//Acá esta el boton <Nuevo>
+                                include "modals/editar/editar_orden.php";
+                                include "view/ajax/pdf_orden.php";
                         ?>
                     <!-- /end modals -->
                     
@@ -195,7 +196,6 @@
      var parametros = $(this).serialize();
          $.ajax({
                 type: "POST",
-                //url: "view/ajax/agregar/agregar_maquina.php",//aca va para conectar con la bd
                 url: "view/ajax/editar/editar_orden.php",//aca va para conectar con la bd
                 data: parametros,
                  beforeSend: function(objeto){
@@ -241,39 +241,15 @@ function buscarMaquinas() {
         // Evitar el envío del formulario
         event.preventDefault();
     }
-/*
-    $( "#update_register" ).submit(function( event ) {
-      $('#actualizar_datos').attr("disabled", true);
-     var parametros = $(this).serialize();
-         $.ajax({
-                type: "POST",
-                url: "view/ajax/editar/editar_orden.php",
-                data: parametros,
-                 beforeSend: function(objeto){
-                    $("#resultados_ajax").html("Enviando...");
-                  },
-                success: function(datos){
-                $("#resultados_ajax").html(datos);
-                $('#actualizar_datos').attr("disabled", false);
-                load(1);
-                window.setTimeout(function() {
-                $(".alert").fadeTo(500, 0).slideUp(500, function(){
-                $(this).remove();});}, 5000);
-                $('#modal_update').modal('hide');
-              }
-        });
-      event.preventDefault();
-    });*/
+
 </script>
 <script>
+
     function editar(id){
 //        console.log(id);si me muestra el id 
         var parametros = {"action":"ajax","id":id};
         $.ajax({
-                //url:'view/modals/editar/seguro.php',
-                //url:'modals/agregar/agregar_maquina.php',
                 url: 'view/modals/editar/orden.php',
-//                url: "view/ajax/editar/orden.php",
                 data: parametros,
                  beforeSend: function(objeto){
                 $("#loader2").html("<img src='./assets/img/ajax-loader.gif'>");
@@ -288,6 +264,7 @@ function buscarMaquinas() {
         <?php echo "oka"; ?>
     }
 </script>
+
 <?php     
     }else{
       require 'resources/acceso_prohibido.php';

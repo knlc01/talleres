@@ -1,4 +1,5 @@
 <?php
+//En este archivo se muestra la tablaa con todas las ordenes
 	include("is_logged.php");//Archivo comprueba si el usuario esta logueado
 	/* Connect To Database*/
 	require_once ("../../config/config.php");
@@ -142,7 +143,11 @@ if($action == 'ajax'){
 				<td class="text-right"> <!-- boton elminar y editar -->
                     <button type="button" class="btn btn-warning btn-square btn-xs" data-toggle="modal" data-target="#modal_update" onclick="editar('<?php echo $id;?>');"><i class="fa fa-edit"></i></button>
                     <button type="button" class="btn btn-danger btn-square btn-xs" onclick="eliminar('<?php echo $id;?>')"><i class="fa fa-trash-o"></i></button>
-                </td>
+					<!-- <button type="button" class="btn btn-primary btn-square btn-xs" data-toggle="modal" data-target="#modal_pdf"  onclick="generarPDF('<?php echo $id; ?>')">
+						<i class="fa fa-file-pdf-o"></i> Generar PDF
+					</button> -->
+					<a href="view\ajax\pdf_generar.php?idOrden=<?php echo $id;?>" target="_blank">Generar PDF</a>
+				</td>
             </tr>
         </tbody>
         <?php }?>	
